@@ -1,0 +1,96 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="css/styles.css" />
+    <title>Form</title>
+  </head>
+  <body>
+    <main>
+      <form action="#" method="post">
+        <div class="user-name-box">
+          <label for="user-name">Full Name</label>
+          <input type="text" name="user-name" id="user-name" />
+        </div>
+        <div class="user-email-box">
+          <label for="user-email">Email</label>
+          <input type="email" name="user-email" id="user-email" />
+        </div>
+        <div class="user-password-box">
+          <label for="user-password"></label>
+          <input type="password" name="user-password" id="user-password" />
+        </div>
+        <div class="user-birthday-box">
+          <label for="user-birthday">Birthday</label>
+          <input type="date" name="user-birthday" id="user-birthday" />
+        </div>
+        <div class="user-preparation-level-box">
+          <label for="user-preparation-level">Level of preparation</label>
+          <select name="user-preparation-level" id="user-preparation-level">
+            <option value="starter">Started</option>
+            <option value="middle">Middle</option>
+            <option value="profi">Profi</option>
+          </select>
+        </div>
+        <div class="user-hours-box">
+          <label for="user-hours">Hours you can dedicate</label>
+          <input type="number" name="user-hours" id="user-hours" />
+        </div>
+        <div class="user-field-box">
+          <p>Field</p>
+          <label for="medicine">medicine</label>
+          <input
+            type="radio"
+            name="user-field"
+            id="medicine"
+            value="medicine"
+          />
+          <label for="logistic">Logistic</label>
+          <input
+            type="radio"
+            name="user-field"
+            id="logistic"
+            value="logistic"
+          />
+          <label for="medicine">IT-support</label>
+          <input
+            type="radio"
+            name="user-field"
+            id="it-support"
+            value="it-support"
+          />
+        </div>
+        <div class="user-experiance-box">
+          <label for="user-experiance">About me</label>
+          <textarea
+            minlength="50"
+            name="user-experiance"
+            id="user-experiance"
+          ></textarea>
+        </div>
+        <div class="user-sertificate-box">
+          <label for="user-sertificate">Sertificate</label>
+          <input
+            type="file"
+            name="user-sertificate"
+            id="user-sertificate"
+            accept=".jpg, .png"
+          />
+        </div>
+        <div class="user-agreement-box">
+          <label for="user-agreement">Agree with all conditions</label>
+          <input
+            type="checkbox"
+            name="user-agreement"
+            id="user-agreement"
+            checked
+          />
+        </div>
+        <button type="reset">Reset</button>
+        <button type="submit">Submit</button>
+      </form>
+    </main>
+    <script defer src="js/script.js"></script>
+  </body>
+</html>
