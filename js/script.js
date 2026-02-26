@@ -1,5 +1,5 @@
 //++++++++++++++++++++++++++++++++++++++++++
-const dataValid = [false, false, false, false];
+const dataValid = [false, false, false, false, false];
 //++++++++++++++++++++++++++++++++++++++++++
 const userName = document.getElementById("user-name");
 
@@ -153,13 +153,28 @@ userBirthday.addEventListener("change", (event) => {
   if (today.getTime() >= eighteenthBirthday) {
     dataValid[3] = true;
     removeInvalidAddValid(userBirthday);
-    console.log("okay");
     errorMessage.classList.add("inactive");
   } else {
     dataValid[3] = false;
     removeValidAddInvalid(userBirthday);
     errorMessage.textContent = "Sorry, but candidate must be 18+ years old";
-    console.log("NOT okay");
     errorMessage.classList.remove("inactive");
+  }
+});
+
+//++++++++++++++++++++++++++++++++++++++++++
+
+const userPreparationLevel = document.getElementById("user-preparation-level");
+
+userPreparationLevel.addEventListener("change", (event) => {
+  const value = event.target.value;
+  const validLevels = ["starter", "middle", "profi"];
+
+  if (validLevels.includes(value)) {
+    dataValid[3] = true;
+    removeInvalidAddValid(userPreparationLevel);
+  } else {
+    dataValid[3] = false;
+    removeValidAddInvalid(userPreparationLevel);
   }
 });
