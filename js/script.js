@@ -1,19 +1,5 @@
-const userBirthday = document.querySelector("input[type='date']");
-let date = new Date();
-
-const optionYear = { year: "numeric" };
-const optionMonth = { month: "2-digit" };
-const optionDay = { day: "2-digit" };
-
-const year = date.toLocaleString("en-US", optionYear);
-const month = date.toLocaleString("en-US", optionMonth);
-const day = date.toLocaleString("en-US", optionDay);
-
-userBirthday.value = `${year}-${month}-${day}`;
-
-// console.log(userBirthday.value);
 //++++++++++++++++++++++++++++++++++++++++++
-const dataValid = [false, false, false];
+const dataValid = [false, false, false, false];
 //++++++++++++++++++++++++++++++++++++++++++
 const userName = document.getElementById("user-name");
 
@@ -152,3 +138,28 @@ function searchingForLetterInLowerCase(str) {
   const regex = /\p{Ll}/u;
   return regex.test(str);
 }
+//++++++++++++++++++++++++++++++++++++++++++
+const userBirthday = document.getElementById("user-birthday");
+
+userBirthday.addEventListener("change", (event) => {
+  let errorMessage = event.target
+    .closest(".input-box")
+    .querySelector(".error-message");
+  let today = new Date();
+  let userBirthdayDate = new Date(event.target.value);
+  let eighteenthBirthday = new Date(userBirthdayDate);
+
+  eighteenthBirthday.setFullYear(userBirthdayDate.getFullYear() + 18);
+  if (today.getTime() >= eighteenthBirthday) {
+    dataValid[3] = true;
+    removeInvalidAddValid(userBirthday);
+    console.log("okay");
+    errorMessage.classList.add("inactive");
+  } else {
+    dataValid[3] = false;
+    removeValidAddInvalid(userBirthday);
+    errorMessage.textContent = "Sorry, but candidate must be 18+ years old";
+    console.log("NOT okay");
+    errorMessage.classList.remove("inactive");
+  }
+});
