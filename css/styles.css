@@ -123,6 +123,15 @@ textarea {
 .valid {
   border: 2px solid green;
 }
+.error-message {
+  font-size: 0.5em;
+  color: red;
+  font-style: italic;
+  margin-top: 1em;
+}
+.error-message.inactive {
+  display: none;
+}
 input[type="radio"] {
   appearance: none;
   display: flex;
