@@ -1,0 +1,222 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans:ital,wght@0,100..900;1,100..900&display=swap");
+/* VARIABLES */
+/* FONTS */
+/* RESET */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+/* BASIC */
+body {
+  font-size: 16px;
+  width: 100%;
+  min-height: 100vh;
+  background-image: url("../assets/images/body-bg.jpg");
+  background-size: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-family: "Noto Sans", sans-serif;
+  padding: 3em;
+}
+main {
+  width: 550px;
+  background-color: rgba(255, 255, 255, 0.2);
+  border: 2px solid white;
+  box-shadow: 0 1em 1em rgba(255, 255, 255, 0.2);
+  border-radius: 1em;
+  padding: 3em;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+form {
+  width: 100%;
+  margin-bottom: 2em;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+}
+.input-box input,
+select,
+textarea {
+  width: 100%;
+}
+input::placeholder,
+textarea::placeholder,
+select::placeholder {
+  font-family: "Noto Sans", sans-serif;
+}
+input,
+textarea,
+select {
+  padding: 1em;
+  border-radius: 0.65em;
+  background: #ffffff;
+  border: 1px solid #cccccc;
+}
+label {
+  display: block;
+  color: #666666;
+  font-size: 0.75em;
+}
+.input-box {
+  margin-bottom: 2em;
+}
+.input-box label {
+  margin-bottom: 1em;
+}
+.user-field-box {
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  align-items: start;
+  width: 100%;
+}
+.user-field-box div {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 1em;
+}
+.user-agreement-box {
+  display: flex;
+  flex-direction: row;
+  justify-content: start;
+  align-items: center;
+  margin-bottom: 2em;
+}
+.user-agreement-box input {
+  margin-right: 1em;
+}
+.user-field-box div input {
+  display: flex;
+  margin-right: 1em;
+}
+.user-field-box div label {
+  display: block;
+}
+
+/* ======================== */
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+  /* border: 2px solid #805af6; */
+}
+input:required,
+select:required,
+textarea:required {
+  border-left: 2px solid #805af6;
+}
+textarea {
+  resize: vertical;
+}
+input:valid,
+select:valid,
+textarea:valid {
+  border: 2px solid green;
+}
+input:user-invalid,
+select:user-invalid,
+textarea:user-invalid {
+  border: 2px solid red;
+}
+input[type="radio"] {
+  appearance: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 25px;
+  height: 25px;
+  border-radius: 50%;
+  border: 1px solid lightgrey;
+  position: relative;
+  cursor: pointer;
+}
+input[type="radio"]::after {
+  content: "";
+  position: absolute;
+  display: block;
+  width: 15px;
+  height: 15px;
+  border-radius: 50%;
+  background-color: #805af6;
+  transform: scale(0);
+  transition: transform 0.3s linear;
+}
+input[type="radio"]:checked::after {
+  transform: scale(1);
+}
+
+input[type="checkbox"] {
+  appearance: none;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 35px;
+  height: 35px;
+  cursor: pointer;
+}
+input[type="checkbox"]:checked::after {
+  content: "✔";
+}
+input[type="file"]::file-selector-button {
+  appearance: none;
+  border: 2px solid lightgray;
+  padding: 1em;
+  border-radius: 1em;
+  background-color: transparent;
+  transition:
+    background-color 0.3s linear,
+    border-color 0.3s linear;
+}
+input::file-selector-button:hover {
+  cursor: pointer;
+  background-color: #805af6;
+  color: white;
+  border-color: #805af6;
+}
+/* ==================== */
+.btns-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+button {
+  border: 1px solid #805af6;
+  background-color: white;
+  color: #805af6;
+  padding: 1em 3em;
+  border-radius: 1em;
+}
+button:hover {
+  background-color: #805af6;
+  color: white;
+  border-color: white;
+  cursor: pointer;
+  transition:
+    border-color,
+    0.3s linear,
+    color 0.3s linear,
+    border-color 0.3s linear;
+}
+button:disabled {
+  background-color: lightgray;
+  color: white;
+  border-color: lightgray;
+}
+button:disabled:hover {
+  background-color: lightgray;
+  color: white;
+  border-color: lightgray;
+  cursor: not-allowed;
+}
+
+/* TABLEST STYLES */
+/* DESKTOP STYLES */

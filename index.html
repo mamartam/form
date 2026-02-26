@@ -8,87 +8,147 @@
   </head>
   <body>
     <main>
-      <form action="#" method="post">
-        <div class="user-name-box">
+      <form action="#" method="post" novalidate>
+        <div class="user-name-box input-box">
           <label for="user-name">Full Name</label>
-          <input type="text" name="user-name" id="user-name" />
+          <input
+            type="text"
+            name="user-name"
+            id="user-name"
+            placeholder="Enter yout full name"
+            minlength="3"
+            autocomplete="off"
+            required
+          />
         </div>
-        <div class="user-email-box">
+        <div class="user-email-box input-box">
           <label for="user-email">Email</label>
-          <input type="email" name="user-email" id="user-email" />
+          <input
+            type="email"
+            name="user-email"
+            id="user-email"
+            placeholder="Enter email adress"
+            autocomplete="off"
+            required
+          />
         </div>
-        <div class="user-password-box">
-          <label for="user-password"></label>
-          <input type="password" name="user-password" id="user-password" />
+        <div class="user-password-box input-box">
+          <label for="user-password">Password</label>
+          <input
+            type="password"
+            name="user-password"
+            id="user-password"
+            placeholder="Enter your password"
+            minlength="8"
+            autocomplete="off"
+            required
+          />
         </div>
-        <div class="user-birthday-box">
+        <div class="user-birthday-box input-box">
           <label for="user-birthday">Birthday</label>
-          <input type="date" name="user-birthday" id="user-birthday" />
+          <div class="date-wrapper">
+            <input
+              type="date"
+              name="user-birthday"
+              id="user-birthday"
+              value=""
+              autocomplete="off"
+              required
+            />
+          </div>
         </div>
-        <div class="user-preparation-level-box">
+        <div class="user-preparation-level-box input-box">
           <label for="user-preparation-level">Level of preparation</label>
-          <select name="user-preparation-level" id="user-preparation-level">
-            <option value="starter">Started</option>
+
+          <select
+            name="user-preparation-level"
+            id="user-preparation-level"
+            required
+          >
+            <option value="starter" selected disabled>Choose</option>
+            <option value="starter">Starter</option>
             <option value="middle">Middle</option>
             <option value="profi">Profi</option>
           </select>
         </div>
-        <div class="user-hours-box">
-          <label for="user-hours">Hours you can dedicate</label>
-          <input type="number" name="user-hours" id="user-hours" />
+        <div class="user-hours-box input-box">
+          <label for="user-hours">Hours you can dedicate per week</label>
+          <input
+            type="number"
+            name="user-hours"
+            id="user-hours"
+            min="1"
+            max="168"
+            autocomplete="off"
+            placeholder="Enter number of hours"
+            required
+          />
         </div>
         <div class="user-field-box">
-          <p>Field</p>
-          <label for="medicine">medicine</label>
-          <input
-            type="radio"
-            name="user-field"
-            id="medicine"
-            value="medicine"
-          />
-          <label for="logistic">Logistic</label>
-          <input
-            type="radio"
-            name="user-field"
-            id="logistic"
-            value="logistic"
-          />
-          <label for="medicine">IT-support</label>
-          <input
-            type="radio"
-            name="user-field"
-            id="it-support"
-            value="it-support"
-          />
+          <!-- <p>Field</p> -->
+          <div>
+            <input
+              type="radio"
+              name="user-field"
+              id="medicine"
+              value="medicine"
+            />
+            <label for="medicine">medicine</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="user-field"
+              id="logistic"
+              value="logistic"
+            />
+            <label for="logistic">Logistic</label>
+          </div>
+          <div>
+            <input
+              type="radio"
+              name="user-field"
+              id="it-support"
+              value="it-support"
+            />
+            <label for="medicine">IT-support</label>
+          </div>
         </div>
-        <div class="user-experiance-box">
+        <div class="user-experiance-box input-box">
           <label for="user-experiance">About me</label>
           <textarea
             minlength="50"
             name="user-experiance"
             id="user-experiance"
+            placeholder="My experiance..."
+            autocomplete="off"
+            required
           ></textarea>
         </div>
-        <div class="user-sertificate-box">
+        <div class="user-sertificate-box input-box">
           <label for="user-sertificate">Sertificate</label>
           <input
             type="file"
             name="user-sertificate"
             id="user-sertificate"
             accept=".jpg, .png"
+            required
           />
         </div>
         <div class="user-agreement-box">
-          <label for="user-agreement">Agree with all conditions</label>
           <input
             type="checkbox"
             name="user-agreement"
             id="user-agreement"
+            required
             checked
           />
+          <label for="user-agreement">Agree with all conditions</label>
         </div>
-        <button type="reset">Reset</button>
-        <button type="submit">Submit</button>
+        <div class="btns-container">
+          <button type="reset">Reset</button>
+          <button type="submit" disabled>Submit</button>
+        </div>
       </form>
     </main>
     <script defer src="js/script.js"></script>
