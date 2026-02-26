@@ -117,15 +117,11 @@ textarea:required {
 textarea {
   resize: vertical;
 }
-input:valid,
-select:valid,
-textarea:valid {
-  border: 2px solid green;
-}
-input:user-invalid,
-select:user-invalid,
-textarea:user-invalid {
+.invalid {
   border: 2px solid red;
+}
+.valid {
+  border: 2px solid green;
 }
 input[type="radio"] {
   appearance: none;
