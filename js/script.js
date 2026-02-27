@@ -1,5 +1,5 @@
 //++++++++++++++++++++++++++++++++++++++++++
-const dataValid = [false, false, false, false, false];
+const dataValid = [false, false, false, false, false, false];
 //++++++++++++++++++++++++++++++++++++++++++
 const userName = document.getElementById("user-name");
 
@@ -171,10 +171,54 @@ userPreparationLevel.addEventListener("change", (event) => {
   const validLevels = ["starter", "middle", "profi"];
 
   if (validLevels.includes(value)) {
-    dataValid[3] = true;
+    dataValid[4] = true;
     removeInvalidAddValid(userPreparationLevel);
   } else {
-    dataValid[3] = false;
+    dataValid[4] = false;
     removeValidAddInvalid(userPreparationLevel);
   }
 });
+
+//++++++++++++++++++++++++++++++++++++++++++
+const userHours = document.getElementById("user-hours");
+
+userHours.addEventListener("input", (event) => {
+  let errorMessage = event.target
+    .closest(".input-box")
+    .querySelector(".error-message");
+  let userHoursInputedValue = event.target.value;
+  if (Number(userHoursInputedValue) > 40) {
+    errorMessage.textContent = "Hours can't be greater than 40 per week!";
+    removeValidAddInvalid(userHours);
+    removeInActive(dataValid, errorMessage, 5);
+  } else if (
+    Number(userHoursInputedValue) < 1 &&
+    userHoursInputedValue !== ""
+  ) {
+    errorMessage.textContent = "Hours can't be less than 1!";
+
+    removeValidAddInvalid(userHours);
+    removeInActive(dataValid, errorMessage, 5);
+  } else {
+    dataValid[5] = true;
+    removeInvalidAddValid(userHours);
+    errorMessage.classList.add("inactive");
+  }
+});
+userHours.addEventListener("blur", (event) => {
+  let errorMessage = event.target
+    .closest(".input-box")
+    .querySelector(".error-message");
+  let userHoursInputedValue = event.target.value;
+  if (userHoursInputedValue === "") {
+    errorMessage.textContent = "Please enter hours!";
+
+    removeValidAddInvalid(userHours);
+    removeInActive(dataValid, errorMessage, 5);
+  }
+});
+
+function removeInActive(array, message, index) {
+  message.classList.remove("inactive");
+  array[index] = false;
+}
