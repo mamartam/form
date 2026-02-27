@@ -1,5 +1,5 @@
 //++++++++++++++++++++++++++++++++++++++++++
-const dataValid = [false, false, false, false, false, false];
+const dataValid = [false, false, false, false, false, false, false];
 //++++++++++++++++++++++++++++++++++++++++++
 const userName = document.getElementById("user-name");
 
@@ -222,3 +222,19 @@ function removeInActive(array, message, index) {
   message.classList.remove("inactive");
   array[index] = false;
 }
+
+//++++++++++++++++++++++++++++++++++++++++++
+const userFieldBox = document.querySelector(".user-field-box");
+
+userFieldBox.addEventListener("change", (event) => {
+  let errorMessage = event.target
+    .closest(".user-field-box")
+    .querySelector(".error-message");
+  if (event.target.name === "user-field") {
+    console.log(event.target);
+    dataValid[6] = true;
+    errorMessage.classList.add("inactive");
+  }
+});
+
+//++++++++++++++++++++++++++++++++++++++++++
